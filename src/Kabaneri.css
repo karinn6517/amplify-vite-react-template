@@ -1,0 +1,19 @@
+main.kabaneri-page {
+  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+
+  margin: 2rem auto;
+  padding: 2rem;
+
+  min-height: 60vh;
+  max-width: 550px;
+  width: 600px
+}
+
+.kabaneri-page h1 {
+  color: red;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
