@@ -7,7 +7,7 @@ import { Stack, Typography } from "@mui/material";
 function Kabaneri() {
 
   function chanceEvent(isLow: boolean): void {
-
+    console.log(isLow);
   }
 
   function czoneEvent(): void {
