@@ -27,7 +27,7 @@ const CharacterComponent: React.FC<CharacterComponentProps> = (props) => {
   const [czUp, setCzUp] = React.useState(false);
 
   // badge ようにいれとく
-  const [invisible, setInvisible] = React.useState(false);
+  //const [invisible, setInvisible] = React.useState(false);
 
   React.useEffect(() => {
     setTotal(props.tortal ?? 0);
@@ -79,6 +79,7 @@ const CharacterComponent: React.FC<CharacterComponentProps> = (props) => {
         <Typography variant="h5" align="right">123pt</Typography>
         <Button>CZ</Button>
         <Button>double</Button>
+        {total} / {chance} / {state} / {czUp}
       </div>
     </div>
   );

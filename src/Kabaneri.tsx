@@ -1,7 +1,7 @@
 
 import "./Kabaneri.css";
 import Button from '@mui/material/Button';
-import CharacterComponent, { CharacterState } from "./CharacterComponent";
+import CharacterComponent from "./CharacterComponent";
 import { Stack, Typography } from "@mui/material";
 
 function Kabaneri() {
