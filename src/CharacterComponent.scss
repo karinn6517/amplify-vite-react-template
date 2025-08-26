@@ -58,6 +58,8 @@
   }
 
   .lamp {
+    align-items: center;
+    justify-content: center;
 
     button {
       background-color: lightgray;
@@ -68,8 +70,8 @@
       cursor: pointer;
       font-size: 1rem;
       transition: background-color 0.3s ease;
-      height: 7rem;
-      width: 7rem;
+      height: 6rem;
+      width: 6rem;
       border-color: white;
       border-width: 1rem;
       border-style: solid;
@@ -83,8 +85,4 @@
     justify-content: space-around;
   }
 
-  .lamp {
-    align-items: center;
-    justify-content: center;
-  }
 }

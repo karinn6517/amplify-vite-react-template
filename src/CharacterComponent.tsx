@@ -78,7 +78,7 @@ const CharacterComponent: React.FC<CharacterComponentProps> = (props) => {
       <div className="box">
         <Typography variant="h5" align="right">123pt</Typography>
         <Button>CZ</Button>
-        <Button>double</Button>
+        <Button>-D</Button>
         {total} / {chance} / {state} / {czUp}
       </div>
     </div>
