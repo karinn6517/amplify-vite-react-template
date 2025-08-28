@@ -1,13 +1,9 @@
 .character-component {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 
   &.mumei {
     button {
-      &::before {
-        content: "無名";
-      }
-
       &.glow {
         background-color: red;
       }
@@ -16,16 +12,11 @@
         border-color: orange;
         background-color: red;
       }
-
     }
   }
 
   &.ikoma {
     button {
-      &::before {
-        content: "生駒";
-      }
-
       &.glow {
         background-color: green;
       }
@@ -34,17 +25,11 @@
         border-color: greenyellow;
         background-color: green;
       }
-
     }
   }
 
   &.biba {
     button {
-      &::before {
-        content: "美馬";
-      }
-
-
       &.glow {
         background-color: purple;
       }
@@ -53,7 +38,6 @@
         border-color: plum;
         background-color: purple;
       }
-
     }
   }
 
@@ -81,8 +65,8 @@
   .box {
     display: flex;
     flex-direction: column;
-    height: 11rem;
-    justify-content: space-around;
+    height: 8rem;
+    justify-content: space-between;
   }
 
 }
