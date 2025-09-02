@@ -1,17 +1,20 @@
 main.kabaneri-page {
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
   border-radius: 1.5rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-
   padding: 1rem;
-
   min-height: 80vh;
   max-width: 400px;
-  width: 400px
+  width: 400px;
+  background: linear-gradient(120deg, #e0ffe7 0%, #b2f7c1 100%);
+}
+
+.kabaneri-page.minus {
+  background: radial-gradient(circle at 50% 30%, #fffbe6 0%, #ffe082 60%, #ff9800 100%);
+  box-shadow: 0 0 40px 10px #ffe08288;
 }
 
 .kabaneri-page h1 {
-  color: red;
+  color: #d80d0d;
   font-size: 2.2rem;
   margin-bottom: 1rem;
   letter-spacing: 0.05em;

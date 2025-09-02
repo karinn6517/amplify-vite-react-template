@@ -1,8 +1,7 @@
 import { Button } from "@aws-amplify/ui-react";
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
 import WhatshotIcon from "@mui/icons-material/Whatshot";
-import { Typography } from "@mui/material";
+import { Switch, Typography } from "@mui/material";
 import React from "react";
 import "./CharacterComponent.scss";
 
@@ -11,6 +10,7 @@ export interface CharacterComponentProps {
   className: string;
   allStar: number;
   atUp: number;
+  decrement: boolean;
   onChance?: (glowStar: boolean) => void;
 }
 
@@ -42,7 +42,11 @@ const CharacterComponent: React.FC<CharacterComponentProps> = (props) => {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-around" }}>
           <div className="box lamp">
             <button onClick={() => {
-              setTotal(total + 1);
+              if (props.decrement) {  // 減算モード
+                setTotal(Math.max(0, total - 1));
+              } else {  // 加算モード
+                setTotal(total + 1);
+              }
               // chanceevent
               // 低確発光しないので false のまま
               props.onChance && props.onChance(false);
@@ -50,31 +54,35 @@ const CharacterComponent: React.FC<CharacterComponentProps> = (props) => {
           </div>
           <div className="box lamp">
             <button className="glow" onClick={() => {
-              setTotal(total + 15);
-              // chanceevent
-              // false から true に変わるとき低確発光扱い
-              props.onChance && props.onChance(star === false);
-              setStar(true);
+              if (props.decrement) {  // 減算モード
+                setTotal(Math.max(0, total - 15));
+                // 低確発光フラグが立っていること前提なので true
+                props.onChance && props.onChance(true);
+                setStar(false);
+              } else {  // 加算モード
+                setTotal(total + 15);
+                props.onChance && props.onChance(star == false);
+                setStar(true);
+              }
             }}></button>
           </div>
           <div className="box lamp">
             <button className="halo" onClick={() => {
-              setTotal(total + 15);
-              // chanceevent
-              // false から true に変わるとき低確発光扱い
-              props.onChance && props.onChance(star === false);
-              setStar(true);
+              if (props.decrement) {  // 減算モード
+                setTotal(Math.max(0, total - 15));
+                // チャメだけ取り消したいので false でイベント発光
+                props.onChance && props.onChance(false);
+              } else {  // 加算モード
+                setTotal(total + 15);
+                props.onChance && props.onChance(star === false);
+                setStar(true);
+              }
             }}></button>
           </div>
         </div>
       </div>
       <div className="box">
-        <Button onClick={
-          () => {
-            // 無星に戻す
-            setStar(false)
-          }
-        }><StarBorderIcon color="action" /></Button>
+        <Switch checked={star} onChange={e => setStar(e.target.checked)} />
         <Button onClick={
           () => {
             // cz に入ったのでカウンタも星もリセット
